@@ -1,50 +1,50 @@
 # dbot
 
-A lightweight personal AI assistant framework built in Python. Connect to Feishu/Lark messaging platform and provide AI-powered assistance through a modular, extensible architecture.
+一个用 Python 构建的轻量级个人 AI 助手框架。连接到飞书/Lark 消息平台，通过模块化、可扩展的架构提供 AI 辅助服务。
 
 [![Python Version](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
-## Features
+## 功能特性
 
-- **Feishu/Lark Support** - Connect to Feishu/Lark messaging platform
-- **Multiple LLM Providers** - Support for OpenAI, Anthropic, DeepSeek, Groq, OpenRouter, Zhipu, Gemini, and more
-- **Tool System** - Extensible tools for file operations, web search, shell execution, and more
-- **Skills System** - Modular skills for specialized functionality
-- **Memory Management** - Persistent conversation history with context-aware responses
-- **Session Management** - Multi-user support with isolated sessions
-- **Cron Jobs** - Scheduled tasks and reminders
-- **MCP Protocol** - Model Context Protocol for external tool integration
+- **飞书/Lark 支持** - 连接飞书/Lark 消息平台
+- **多 LLM 提供商** - 支持 OpenAI、Anthropic、DeepSeek、Groq、OpenRouter、智谱、Gemini 等
+- **工具系统** - 可扩展的文件操作、网页搜索、Shell 执行等工具
+- **技能系统** - 模块化技能，支持 specialized 功能
+- **记忆管理** - 持久化对话历史，上下文感知响应
+- **会话管理** - 多用户支持，隔离会话
+- **定时任务** - 计划任务和提醒
+- **MCP 协议** - Model Context Protocol，支持外部工具集成
 
-## Installation
+## 安装
 
 ```bash
 pip install dbot
 ```
 
-For development:
+开发安装：
 
 ```bash
-git clone https://github.com/yourusername/dbot.git
+git clone https://github.com/yeziyun/dbot.git
 cd dbot
 pip install -e ".[dev]"
 ```
 
-## Quick Start
+## 快速开始
 
-### 1. Start the Gateway
+### 1. 启动网关
 
 ```bash
 python run.py
 ```
 
-On first run, this will automatically:
-- Create `./config.json` configuration file
-- Create `./workspace/` directory
+首次运行时会自动创建：
+- `./config.json` 配置文件
+- `./workspace/` 工作目录
 
-### 2. Configure LLM Provider
+### 2. 配置 LLM 提供商
 
-Edit `./config.json` to add your API keys:
+编辑 `./config.json` 添加 API 密钥：
 
 ```json
 {
@@ -66,9 +66,9 @@ Edit `./config.json` to add your API keys:
 }
 ```
 
-### 3. Configure Feishu Channel
+### 3. 配置飞书渠道
 
-Enable and configure Feishu channel in `./config.json`:
+在 `./config.json` 中启用并配置飞书渠道：
 
 ```json
 {
@@ -82,53 +82,53 @@ Enable and configure Feishu channel in `./config.json`:
 }
 ```
 
-The gateway runs on port 18790 by default.
+网关默认运行在端口 18790。
 
-## Supported LLM Providers
+## 支持的 LLM 提供商
 
 - OpenAI (GPT-4, GPT-3.5)
 - Anthropic (Claude Opus, Sonnet, Haiku)
 - DeepSeek
 - Groq
 - OpenRouter
-- Zhipu AI
-- Dashscope (Alibaba)
+- 智谱 AI
+- 阿里云百炼
 - Gemini (Google)
-- Moonshot
-- vLLM (local)
-- Ollama (local)
+- 月之暗面
+- vLLM (本地部署)
+- Ollama (本地部署)
 
-## Supported Channels
+## 支持的渠道
 
-| Channel | Description |
-|---------|-------------|
-| **Feishu/Lark** | WebSocket long connection |
+| 渠道 | 说明 |
+|------|------|
+| **飞书/Lark** | WebSocket 长连接 |
 
-## Built-in Skills
+## 内置技能
 
-| Skill | Description |
-|-------|-------------|
-| `github` | Interact with GitHub repositories using `gh` CLI |
-| `weather` | Get weather information using wttr.in and Open-Meteo |
-| `summarize` | Summarize URLs, files, and YouTube videos |
-| `tmux` | Remote-control tmux sessions |
-| `clawhub` | Search and install skills from ClawHub registry |
-| `skill-creator` | Create new skills |
+| 技能 | 说明 |
+|------|------|
+| `github` | 使用 `gh` CLI 与 GitHub 仓库交互 |
+| `weather` | 使用 wttr.in 和 Open-Meteo 获取天气信息 |
+| `summarize` | 摘要 URL、文件和 YouTube 视频 |
+| `tmux` | 远程控制 tmux 会话 |
+| `clawhub` | 从 ClawHub 注册表搜索和安装技能 |
+| `skill-creator` | 创建新技能 |
 
-## Tools
+## 工具
 
-dbot provides a comprehensive tool system:
+dbot 提供全面的工具系统：
 
-- **File Tools** - Read, write, edit files in the workspace
-- **Web Tools** - Search the web, fetch URL content
-- **Shell Tools** - Execute commands (with safety restrictions)
-- **Cron Tools** - Schedule and manage recurring tasks
-- **Message Tools** - Send cross-platform messages
-- **Memory Tools** - Access persistent conversation memory
+- **文件工具** - 在工作区读取、写入、编辑文件
+- **Web 工具** - 搜索网页、获取 URL 内容
+- **Shell 工具** - 执行命令（带安全限制）
+- **Cron 工具** - 调度和管理重复任务
+- **消息工具** - 发送跨平台消息
+- **记忆工具** - 访问持久化对话记忆
 
-## Configuration
+## 配置
 
-Configuration is stored in `./config.json`:
+配置存储在 `./config.json`：
 
 ```json
 {
@@ -161,73 +161,73 @@ Configuration is stored in `./config.json`:
 }
 ```
 
-### Security Options
+### 安全选项
 
-- `restrict_to_workspace` - Limit file operations to workspace directory
-- `blocked_patterns` - Regex patterns for blocked commands
-- Channel-specific allowlists for user access control
+- `restrict_to_workspace` - 限制文件操作在工作区目录内
+- `blocked_patterns` - 阻止的命令正则模式
+- 渠道特定的用户访问控制白名单
 
-## Architecture
+## 架构
 
 ```
 dbot/
-├── agent/          # Core agent functionality
-│   ├── loop.py     # Main processing engine
-│   ├── context.py  # Context building
-│   ├── memory.py   # Memory management
-│   └── tools/      # Available tools
-├── channels/       # Messaging platform integrations
-├── providers/      # LLM provider support
-├── bus/            # Message queue system
-├── config/         # Configuration management
-├── skills/         # Extensible skills system
-├── templates/      # Template files for AI behavior
-├── gateway.py      # Gateway startup logic
-└── __main__.py     # Module entry point
+├── agent/          # 核心代理功能
+│   ├── loop.py     # 主处理引擎
+│   ├── context.py  # 上下文构建
+│   ├── memory.py   # 记忆管理
+│   └── tools/      # 可用工具
+├── channels/       # 消息平台集成
+├── providers/      # LLM 提供商支持
+├── bus/            # 消息队列系统
+├── config/         # 配置管理
+├── skills/         # 可扩展技能系统
+├── templates/      # AI 行为模板文件
+├── gateway.py      # 网关启动逻辑
+└── __main__.py     # 模块入口
 ```
 
-### Message Bus
+### 消息总线
 
-The message bus decouples channels from the agent:
+消息总线将渠道与代理解耦：
 
-1. Channels receive messages and push to the inbound queue
-2. The agent loop processes messages from the queue
-3. Responses are pushed to the outbound queue
-4. Channels send responses back to their platforms
+1. 渠道接收消息并推送到入站队列
+2. 代理循环从队列处理消息
+3. 响应被推送到出站队列
+4. 渠道将响应发送回各自平台
 
-### Templates
+### 模板
 
-Templates in `./workspace/` guide AI behavior:
+`./workspace/` 中的模板指导 AI 行为：
 
-- `SOUL.md` - Personality and values
-- `AGENTS.md` - Agent instructions
-- `HEARTBEAT.md` - Periodic tasks
-- `MEMORY.md` - Persistent memory
-- `USER.md` - User preferences
+- `SOUL.md` - 个性和价值观
+- `AGENTS.md` - 代理指令
+- `HEARTBEAT.md` - 定期任务
+- `MEMORY.md` - 持久化记忆
+- `USER.md` - 用户偏好
 
-## Development
+## 开发
 
-### Running Tests
+### 运行测试
 
 ```bash
 pytest
 ```
 
-### Code Style
+### 代码风格
 
 ```bash
 ruff check .
 ruff format .
 ```
 
-## License
+## 许可证
 
-MIT License - see [LICENSE](LICENSE) for details.
+MIT 许可证 - 详见 [LICENSE](LICENSE)。
 
-## Acknowledgments
+## 致谢
 
-The skills system is adapted from [OpenClaw](https://github.com/openclaw/openclaw)'s skill system. The skill format and metadata structure follow OpenClaw's conventions to maintain compatibility.
+技能系统改编自 [OpenClaw](https://github.com/openclaw/openclaw) 的技能系统。技能格式和元数据结构遵循 OpenClaw 的约定以保持兼容性。
 
-## Contributing
+## 贡献
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+欢迎贡献！请随时提交 Pull Request。

@@ -8,7 +8,7 @@
 ## 功能特性
 
 - **飞书/Lark 支持** - 连接飞书/Lark 消息平台
-- **多 LLM 提供商** - 支持 OpenAI、Anthropic、DeepSeek、Groq、OpenRouter、智谱、Gemini 等
+- **LLM 提供商** - 支持本地 Ollama 和 OpenAI、Anthropic 兼容格式的任何模型提供商
 - **工具系统** - 可扩展的文件操作、网页搜索、Shell 执行等工具
 - **技能系统** - 模块化技能，支持 specialized 功能
 - **记忆管理** - 持久化对话历史，上下文感知响应
@@ -86,17 +86,9 @@ python run.py
 
 ## 支持的 LLM 提供商
 
-- OpenAI (GPT-4, GPT-3.5)
-- Anthropic (Claude Opus, Sonnet, Haiku)
-- DeepSeek
-- Groq
-- OpenRouter
-- 智谱 AI
-- 阿里云百炼
-- Gemini (Google)
-- 月之暗面
-- vLLM (本地部署)
-- Ollama (本地部署)
+- **本地部署** - Ollama、vLLM
+- **OpenAI 兼容** - 任何 OpenAI API 格式的提供商
+- **Anthropic 兼容** - 任何 Anthropic Claude API 格式的提供商
 
 ## 支持的渠道
 
